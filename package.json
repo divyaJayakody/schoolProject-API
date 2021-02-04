@@ -9,7 +9,7 @@
     "body-parser": "latest",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
-    "express": "~4.17.x",
+    "express": "~4.16.x",
     "mongodb": "^3.6.4",
     "http-errors": "~1.6.3",
     "joi": "^17.3.0",
