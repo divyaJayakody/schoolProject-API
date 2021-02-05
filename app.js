@@ -28,10 +28,20 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+
 // app.use('/', express.static('public/schoolProject/'));
 // app.use(express.static(path.join(__dirname, 'schoolProject')));
 // app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static('schoolProject'));
+// app.use(express.static('schoolProject/index.html'));
+
+// Run the app by serving the static files
+// in the dist directory
+
+app.get('/*', function(req,res) {
+
+  res.sendFile(path.join(__dirname+'/schoolProject/index.html'));
+});
+
 /* routing incoming requests to the controller */
 let schoolRouter = require('./routes/school-controller');
 app.use('/schools', schoolRouter);
