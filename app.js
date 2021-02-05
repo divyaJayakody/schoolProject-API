@@ -29,9 +29,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 // app.use('/', express.static('public/schoolProject/'));
-app.use(express.static(path.join(__dirname, './public/dist/schoolProject')))
+app.use(express.static(path.join(__dirname, 'schoolProject')));
 // app.use(express.static(path.join(__dirname, 'public')));
-
+// app.use(express.static('schoolProject'));
 /* routing incoming requests to the controller */
 let schoolRouter = require('./routes/school-controller');
 app.use('/schools', schoolRouter);
